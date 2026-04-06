@@ -1,0 +1,15 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "cd backend && mvn clean package -DskipTests && mvn tomcat7:run"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+
+[build.env]
+NODE_VERSION = "18"
+
+[deploy.env]
+PORT = "8080"
+JAVA_VERSION = "11"
