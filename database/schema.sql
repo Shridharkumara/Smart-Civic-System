@@ -36,4 +36,5 @@ CREATE TABLE IF NOT EXISTS votes (
 );
 
 INSERT IGNORE INTO users (name, email, password_hash, role) VALUES
-('Admin User', 'admin@smartcivic.com', SHA2('AdminPass123', 256), 'admin');
+('Admin User', 'admin@smartcivic.com', SHA2('AdminPass123', 256), 'admin'),
+('Anonymous Reporter', 'anonymous@smartcivic.com', SHA2('anonymous', 256), 'user');

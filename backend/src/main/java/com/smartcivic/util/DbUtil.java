@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbUtil {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/smartcivic?serverTimezone=UTC&useSSL=false";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "password";
+    private static final String DB_URL = System.getenv().getOrDefault("DB_URL", "jdbc:mysql://localhost:3306/smartcivic?serverTimezone=UTC&useSSL=false");
+    private static final String DB_USER = System.getenv().getOrDefault("DB_USER", "root");
+    private static final String DB_PASSWORD = System.getenv().getOrDefault("DB_PASSWORD", "password");
 
     static {
         try {
